@@ -38,6 +38,7 @@
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -66,14 +67,14 @@
 		</dependency>
 <!--		WEB CLIENT-->
 		<dependency>
-			   <groupId>org.springframework.boot</groupId>
-			    <artifactId>spring-boot-starter-webflux</artifactId>
-			<version>2.2.2.RELEASE</version>>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+			<version>2.2.2.RELEASE</version>
 		</dependency>
 		<dependency>
-			    <groupId>org.projectreactor</groupId>
-			    <artifactId>reactor-spring</artifactId>
-			    <version>1.0.1.RELEASE</version>
+			<groupId>org.projectreactor</groupId>
+			<artifactId>reactor-spring</artifactId>
+			<version>1.0.1.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
