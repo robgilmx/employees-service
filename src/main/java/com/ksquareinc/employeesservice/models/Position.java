@@ -1,27 +1,46 @@
 package com.ksquareinc.employeesservice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
-public class Position {
 
-    private long id;
+@Entity
+@Table(name = "positions")
+public class Position implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
+    private Long id;
+
+    @Column
     private String name;
-    private List<Employee> employees;
+
+    @OneToMany
+    @JoinColumn
+    @JsonIgnoreProperties("position")
+    private List<Employee> employees = new ArrayList<>();
 
     public Position() {
     }
 
-    public Position(long id, String name, List<Employee> employees) {
+    public Position(Long id, String name, List<Employee> employees) {
         this.id = id;
         this.name = name;
         this.employees = employees;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
